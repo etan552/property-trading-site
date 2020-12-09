@@ -1,0 +1,32 @@
+.category-container {
+	width: 20%;
+	background-color: white;
+	box-shadow: 0 0 7px 1px rgb(163, 163, 163);
+}
+
+.cate {
+	display: flex;
+	justify-content: center;
+}
+
+.category-item {
+	text-decoration: none;
+	color: black;
+	font-weight: 400;
+	font-size: 18px;
+	padding: 5px 0;
+	margin: 5px 0px;
+	/* background-color: brown; */
+	/* text-align: center; */
+}
+
+.category-item:hover {
+	background-color: rgb(241, 241, 241);
+}
+
+.category-header {
+	font-size: 20px;
+	font-weight: 500;
+	padding: 10px 0;
+	background-color: rgb(65, 170, 65);
+}
