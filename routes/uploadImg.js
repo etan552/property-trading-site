@@ -8,7 +8,6 @@ const storage = multer.diskStorage({
 		cb(null, path.join(__dirname, "..", "uploads"));
 	},
 	filename: (req, file, cb) => {
-		// cb(null, file.originalname);
 		cb(
 			null,
 			new Date().toISOString().replace(/:/g, "-") + file.originalname
@@ -19,9 +18,9 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.post("/", upload.any("propertyImage"), (req, res) => {
-	console.log("files");
-	console.log(req.file);
-	res.send(req.file);
+	console.log("files successfully uploaded.");
+
+	res.send("files successfully uploaded.");
 });
 
 module.exports = router;
