@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../view-style/PropertyPage.css";
-import DragNDrop from "./common/DragNDrop";
 import MiniProperty from "./common/MiniProperty";
 
 class PropertyPage extends Component {
@@ -8,8 +7,11 @@ class PropertyPage extends Component {
 	render() {
 		return (
 			<div className="property-container">
-				<MiniProperty />
-				<DragNDrop />
+				<div className="inner-container">
+					<MiniProperty />
+					<MiniProperty />
+					<MiniProperty />
+				</div>
 			</div>
 		);
 	}

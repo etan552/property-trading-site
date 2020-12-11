@@ -1,0 +1,142 @@
+.form-header {
+	font-size: 24px;
+	font-weight: 500;
+	background-color: rgb(65, 170, 65);
+	padding: 10px 20px;
+}
+
+.form-container-inner {
+	padding: 20px;
+}
+
+.reg-form-grid {
+	display: grid;
+	grid-template-columns: 170px 170px 170px 170px;
+	grid-column-gap: 40px;
+}
+
+.login-form-grid {
+	display: grid;
+	grid-template-columns: auto;
+}
+
+.reg-property-name {
+	grid-column-start: 1;
+	grid-column-end: 5;
+}
+.reg-property-email {
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+.reg-property-phone {
+	grid-column-start: 3;
+	grid-column-end: 5;
+}
+
+.reg-property-price {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.reg-property-bedroom {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+.reg-property-bathroom {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+.reg-property-location {
+	grid-column-start: 3;
+	grid-column-end: 5;
+	grid-row-start: 3;
+	grid-row-end: 5;
+}
+
+.reg-property-desc {
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row-start: 5;
+	grid-row-end: 6;
+}
+
+.dnd-form {
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row-start: 6;
+	grid-row-end: 7;
+	margin: 10px 0;
+}
+
+.login-grid-email {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+
+.login-grid-password {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+.login-grid-btn {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.login-grid-new-user {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}
+
+.register-new-user {
+	text-align: center;
+	margin: 20px 0 5px 0;
+
+	/* text-decoration: none; */
+}
+
+.register-new-user:hover {
+	color: rgb(24, 185, 185);
+}
+
+.reg-user-grid-name {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+.reg-user-grid-email {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+.reg-user-grid-password {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.reg-user-grid-btn {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 4;
+	grid-row-end: 5;
+}

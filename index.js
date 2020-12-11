@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const property = require("./routes/property");
 const uploadImg = require("./routes/uploadImg");
+const login = require("./routes/login");
 const path = require("path");
 
 app.use(express.json());
@@ -11,6 +12,7 @@ app.use(cors());
 
 app.use("/api/property", property);
 app.use("/api/uploadImg", uploadImg);
+app.use("/api/login", login);
 
 app.use(express.static("client/build"));
 

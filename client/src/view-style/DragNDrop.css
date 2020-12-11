@@ -1,0 +1,27 @@
+.dnd-field {
+	height: 150px;
+	border: 1.5px solid rgb(155, 155, 155);
+	border-radius: 0.25rem;
+	background-color: rgb(236, 236, 236);
+	margin-top: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	font-size: 20px;
+}
+
+.dragged-over {
+	position: absolute;
+	height: 143px;
+	width: 99%;
+	border: 2px dashed rgb(107, 107, 107);
+	background-color: rgba(207, 253, 207, 0.808);
+}
+
+.uploadImg {
+	display: flex;
+	justify-content: center;
+	margin: 20px auto;
+	width: 30px;
+}

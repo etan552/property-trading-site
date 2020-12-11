@@ -1,5 +1,12 @@
 .property-container {
-	width: 78%;
+	width: 73%;
 	/* background-color: rgb(204, 204, 250); */
 	box-shadow: 0 0 7px 1px rgb(163, 163, 163);
+	padding: 20px;
+}
+
+.inner-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 20px;
 }

@@ -1,4 +1,84 @@
 .mini-container {
-	background-color: lightblue;
-	margin: 10px;
+	display: grid;
+	grid-template-columns: 90px 121.5px 40.5px 40.5px;
+	grid-column-gap: 10px;
+	padding: 10px 15px;
+	border: 1.5px solid rgb(148, 148, 148);
+	border-radius: 0.5rem;
 }
+
+.mini-img {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+.mini-property-name {
+	grid-column-start: 2;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	height: 20px;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.mini-property-price {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 3;
+	grid-row-end: 4;
+
+	padding-top: 20px;
+}
+
+.mini-property-bed {
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	padding-top: 20px;
+}
+.mini-property-bed > img {
+	width: 15px;
+	margin-right: 5px;
+}
+
+.mini-property-bath {
+	grid-column-start: 4;
+	grid-column-end: 5;
+	grid-row-start: 3;
+	grid-row-end: 4;
+	padding-top: 20px;
+}
+
+.mini-property-bath > img {
+	width: 15px;
+	margin-right: 5px;
+}
+
+.mini-property-location {
+	grid-column-start: 2;
+	grid-column-end: 5;
+	grid-row-start: 2;
+	grid-row-end: 3;
+	padding-top: 5px;
+	font-size: 14px;
+	color: rgb(88, 88, 88);
+	font-weight: 400;
+}
+
+/* .mini-property-email {
+	grid-column-start: 4;
+	grid-column-end: 6;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+
+.mini-property-phone {
+	grid-column-start: 6;
+	grid-column-end: 7;
+	grid-row-start: 3;
+	grid-row-end: 4;
+} */
