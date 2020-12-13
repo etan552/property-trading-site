@@ -7,7 +7,12 @@ class CategoryBar extends Component {
 	render() {
 		return (
 			<div className="category-container">
-				<div className="cate category-header">Property Type</div>
+				<div
+					className="cate category-header"
+					style={{ color: "white" }}
+				>
+					Property Type
+				</div>
 				<div>
 					<Link className="cate category-item" to="">
 						All Properties

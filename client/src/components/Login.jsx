@@ -24,17 +24,22 @@ class Login extends Component {
 
 		const url = `${process.env.REACT_APP_API_ENDPOINT}/login`;
 		const payload = this.state.account;
+		try {
+			const res = await axios.post(url, payload);
+			localStorage.setItem("token", res.headers["x-auth-token"]);
+			this.props.onLogin(res.headers["x-auth-token"]);
+			console.log(res.data);
 
-		const { data } = await axios.post(url, payload);
-		console.log(data);
+			window.location.replace("/");
+		} catch (ex) {
+			console.log(ex.response.data);
+		}
 	};
 
 	render() {
 		return (
 			<Form width={{ width: "300px" }}>
-				<div className="form-header" style={{ color: "white" }}>
-					Login
-				</div>
+				<div className="form-header">Login</div>
 				<div className="form-container-inner login-form-grid">
 					<FormInput
 						style={{ style: "login-grid-email" }}

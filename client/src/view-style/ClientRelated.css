@@ -1,8 +1,9 @@
 .form-header {
 	font-size: 24px;
 	font-weight: 500;
-	background-color: rgb(65, 170, 65);
+	background-color: rgb(38, 128, 38);
 	padding: 10px 20px;
+	color: white;
 }
 
 .form-container-inner {

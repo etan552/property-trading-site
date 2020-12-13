@@ -2,4 +2,39 @@
 	width: 100%;
 	height: 50px;
 	background-color: rgb(65, 170, 65);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.nav-container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.nav-container a {
+	padding: 0px 10px;
+	text-decoration: none;
+	border-style: none none none solid;
+	border-width: 1.5px;
+	color: black;
+}
+
+@media (min-width: 1100px) {
+	.nav-container {
+		width: 900px;
+	}
+}
+
+.nav-item {
+	height: 30px;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+}
+
+.nav-item:hover {
+	color: rgb(38, 241, 255);
 }

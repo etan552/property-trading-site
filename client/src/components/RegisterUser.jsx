@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
 import Form from "./common/Form";
 import FormInput from "./common/FormInput";
 import "../view-style/ClientRelated.css";
@@ -13,12 +13,33 @@ class RegisterUser extends Component {
 			password: "",
 		},
 	};
+
+	handleChange = ({ currentTarget: input }) => {
+		const account = { ...this.state.account };
+		account[input.name] = input.value;
+		this.setState({ account });
+	};
+
+	handleSumbit = async (e) => {
+		e.preventDefault();
+
+		const url = `${process.env.REACT_APP_API_ENDPOINT}/register-user`;
+		const payload = this.state.account;
+		try {
+			const res = await axios.post(url, payload);
+			localStorage.setItem("token", res.headers["x-auth-token"]);
+			this.props.onLogin(res.headers["x-auth-token"]);
+
+			window.location.replace("/");
+		} catch (ex) {
+			console.log(ex.response.data);
+		}
+	};
 	render() {
+		const { onLogin } = this.props;
 		return (
 			<Form width={{ width: "300px" }}>
-				<div className="form-header" style={{ color: "white" }}>
-					Register User
-				</div>
+				<div className="form-header">Register User</div>
 				<div className="form-container-inner login-form-grid">
 					<FormInput
 						style={{ style: "reg-user-grid-name" }}

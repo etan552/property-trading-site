@@ -5,9 +5,11 @@ const schemaProperty = new mongoose.Schema({
 	name: { type: String, required: true },
 	price: { type: String, required: true },
 	location: { type: String, required: true },
-	bedroom: { type: Number, required: true },
-	bathroom: { type: Number, required: true },
+	bedroom: { type: String, required: true },
+	bathroom: { type: String, required: true },
 	description: { type: String, required: true },
+	email: { type: String, required: true },
+	phone: { type: String, required: true },
 });
 
 const Property = mongoose.model("property", schemaProperty);
@@ -17,9 +19,11 @@ validateProperty = (property) => {
 		name: joi.string().required(),
 		price: joi.string().required(),
 		location: joi.string().required(),
-		bedroom: joi.number().required(),
-		bathroom: joi.number().required(),
+		bedroom: joi.string().required(),
+		bathroom: joi.string().required(),
 		description: joi.string().required(),
+		email: joi.string().required(),
+		phone: joi.string().required(),
 	});
 	return schema.validate(property);
 };

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import _, { forEach } from "lodash";
+import _ from "lodash";
 import Form from "./common/Form";
 import "../view-style/ClientRelated.css";
 import FormInput from "./common/FormInput";
@@ -11,10 +11,10 @@ class RegisterProperty extends Component {
 	state = {
 		propertyDetails: {
 			name: "",
-			price: 0,
+			price: null,
 			description: "",
-			bedroom: 0,
-			bathroom: 0,
+			bedroom: null,
+			bathroom: null,
 			location: "",
 			email: "",
 			phone: "",
@@ -32,10 +32,11 @@ class RegisterProperty extends Component {
 	handleDropFile = (file) => {
 		const uploadFile = file;
 		this.setState({ uploadFile });
-		this.handleSubmit();
+		// this.handleSubmit();
 	};
 
 	handleSubmit = async (e) => {
+		e.preventDefault();
 		const fd = new FormData();
 
 		for (let key in this.state.propertyDetails) {
@@ -43,15 +44,19 @@ class RegisterProperty extends Component {
 		}
 
 		_.forEach(this.state.uploadFile, (file) => {
-			fd.append("propertyImage", file);
+			fd.append("propertyDetails", file);
 		});
 
-		const url = `${process.env.REACT_APP_API_ENDPOINT}/uploadImg`;
-		// const url = `${process.env.REACT_APP_API_ENDPOINT}/property`;
-		const { data } = await axios.post(url, fd, {
-			headers: { "Content-Type": "multipart/form-data" },
-		});
-		console.log(data);
+		const url = `${process.env.REACT_APP_API_ENDPOINT}/property`;
+
+		try {
+			const { data } = await axios.post(url, fd, {
+				headers: { "Content-Type": "multipart/form-data" },
+			});
+			console.log(data);
+		} catch (ex) {
+			console.log(ex.response.data);
+		}
 	};
 
 	render() {
@@ -71,11 +76,11 @@ class RegisterProperty extends Component {
 						name="email"
 						label="Email"
 						onChange={this.handleChange}
-						desc="Please enter a email address."
+						desc="Please enter an email address."
 					/>
 					<FormInput
 						style={{ style: "reg-property-phone" }}
-						name="phoneNo"
+						name="phone"
 						label="Phone number"
 						onChange={this.handleChange}
 						desc="Please enter a phone number."
@@ -90,7 +95,7 @@ class RegisterProperty extends Component {
 					/>
 					<FormInput
 						style={{ style: "reg-property-bedroom" }}
-						name="Bedroom"
+						name="bedroom"
 						label="Bedroom"
 						onChange={this.handleChange}
 						desc="Number of bedroom(s)."
@@ -121,7 +126,9 @@ class RegisterProperty extends Component {
 						<label htmlFor="">Property image</label>
 						<DragNDrop onDrop={this.handleDropFile} />
 					</div>
-					<button onClick={this.handleSubmit}></button>
+					<button className="form-btn" onClick={this.handleSubmit}>
+						Submit
+					</button>
 				</div>
 			</Form>
 		);
