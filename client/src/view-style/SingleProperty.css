@@ -1,0 +1,74 @@
+.single-prop-container {
+	margin: 65px auto;
+	width: 800px;
+	box-shadow: 0 0 5px 0 gray;
+}
+
+.single-prop-main-img img {
+	width: 430px;
+}
+.single-prop-header {
+	background-color: green;
+	width: auto;
+	font-size: 24px;
+	font-weight: 500;
+	color: white;
+	padding: 10px 20px;
+}
+
+.single-prop-container-inner {
+	display: grid;
+	grid-template-columns: 430px 70px 240px;
+	padding: 20px 20px;
+	grid-column-gap: 10px;
+}
+
+.single-prop-main-img {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	box-shadow: 0 0 3px 2px rgb(207, 207, 207);
+	display: flex;
+}
+
+.single-prop-small-img {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+	display: flex;
+	flex-wrap: wrap;
+	align-self: flex-start;
+}
+
+.small-img {
+	width: 45px;
+	margin: 5px auto;
+	border: 1.5px solid rgb(194, 194, 194);
+	border-radius: 0.25rem;
+}
+
+.small-img:focus {
+	border: 5px solid blueviolet;
+}
+
+.single-prop-details-container {
+	box-shadow: 0 0 3px 2px rgb(207, 207, 207);
+	padding: 15px;
+}
+
+.single-prop-details-header {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.single-prop-details-container p {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.single-prop-detail-group {
+	margin-bottom: 20px;
+}

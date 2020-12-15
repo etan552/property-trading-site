@@ -36,7 +36,6 @@ class RegisterUser extends Component {
 		}
 	};
 	render() {
-		const { onLogin } = this.props;
 		return (
 			<Form width={{ width: "300px" }}>
 				<div className="form-header">Register User</div>

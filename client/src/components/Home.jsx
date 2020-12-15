@@ -7,10 +7,11 @@ import "../view-style/Home.css";
 class Home extends Component {
 	state = {};
 	render() {
+		const { properties } = this.props;
 		return (
 			<div className="home-container">
 				<CategoryBar />
-				<PropertyPage />
+				<PropertyPage properties={properties} />
 			</div>
 		);
 	}

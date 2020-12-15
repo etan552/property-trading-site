@@ -1,29 +1,21 @@
-import Axios from "axios";
 import React, { Component } from "react";
 import axios from "axios";
 import "../view-style/PropertyPage.css";
 import MiniProperty from "./common/MiniProperty";
 
 class PropertyPage extends Component {
-	state = {
-		properties: [],
-	};
-	async componentDidMount() {
-		const url = `${process.env.REACT_APP_API_ENDPOINT}/property`;
-		const { data } = await axios.get(url);
+	state = {};
 
-		this.setState({ properties: data });
-		console.log(data);
-	}
 	render() {
-		const { properties } = this.state;
-		console.log(properties);
+		const { properties } = this.props;
+
 		return (
 			<div className="property-container">
 				<div className="inner-container">
 					{properties.map((property, index) => (
 						<MiniProperty
-							key={index}
+							_id={property._id}
+							key={property._id}
 							name={property.name}
 							price={property.price}
 							location={property.location}

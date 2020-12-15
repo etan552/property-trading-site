@@ -10,6 +10,7 @@ const schemaProperty = new mongoose.Schema({
 	description: { type: String, required: true },
 	email: { type: String, required: true },
 	phone: { type: String, required: true },
+	imageFileName: [String],
 });
 
 const Property = mongoose.model("property", schemaProperty);
@@ -24,6 +25,7 @@ validateProperty = (property) => {
 		description: joi.string().required(),
 		email: joi.string().required(),
 		phone: joi.string().required(),
+		// imagePath: joi.string(),
 	});
 	return schema.validate(property);
 };

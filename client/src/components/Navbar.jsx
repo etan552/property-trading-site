@@ -1,41 +1,57 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../view-style/Navbar.css";
+import UserAccountMenu from "./UserAccountMenu";
 
 class Navbar extends Component {
-	state = {};
+	state = {
+		userAcc: false,
+	};
 
 	handleLogout = () => {
 		localStorage.removeItem("token");
 		window.location.replace("/");
 	};
+
+	handleToggleUserAcc = () => {
+		const userAcc = !this.state.userAcc;
+		this.setState({ userAcc });
+	};
+
 	render() {
 		const { user } = this.props;
+
 		return (
 			<div className="navbar">
 				<div className="nav-container">
-					<Link style={{ borderStyle: "none" }} to="/">
-						<div className="nav-item">Home</div>
-					</Link>
-					{!user && (
-						<Link to="/login">
-							<div className="nav-item">Login</div>
+					<div className="nav-item">
+						<Link
+							className="nav-item-link"
+							style={{ borderStyle: "none" }}
+							to="/"
+						>
+							Home
 						</Link>
-					)}
-					{user && (
-						<React.Fragment>
-							<Link to="register-property">
-								<div className="nav-item">Add property</div>
+					</div>
+					{!user ? (
+						<div className="nav-item">
+							<Link className="nav-item-link" to="/login">
+								Login
 							</Link>
-							<Link to="#">
-								<div
-									className="nav-item"
-									onClick={this.handleLogout}
-								>
-									Logout
-								</div>
-							</Link>
-						</React.Fragment>
+						</div>
+					) : (
+						<div className="nav-item">
+							<div
+								className="user-acc"
+								onClick={this.handleToggleUserAcc}
+							>
+								Account
+							</div>
+							<UserAccountMenu
+								userAccMenu={this.state.userAcc}
+								onLogout={this.handleLogout}
+							/>
+						</div>
 					)}
 				</div>
 			</div>

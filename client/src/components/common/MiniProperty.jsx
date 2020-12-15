@@ -6,10 +6,17 @@ import bathroomImg from "../../assets/bathtub.svg";
 
 class MiniProperty extends Component {
 	state = {};
+
+	handleRedirect = (id) => {
+		window.location = `/single-property/${id}`;
+	};
 	render() {
-		const { name, price, location, bedroom, bathroom } = this.props;
+		const { _id, name, price, location, bedroom, bathroom } = this.props;
 		return (
-			<div className="mini-container">
+			<div
+				className="mini-container"
+				onClick={() => this.handleRedirect(_id)}
+			>
 				<img className="mini-img" src={dummyImg} alt="upload" />
 				<div className="mini-property-name">{name}</div>
 
@@ -24,19 +31,6 @@ class MiniProperty extends Component {
 				</div>
 
 				<div className="mini-property-location">{location}</div>
-				{/* <div className="mini-property-name">3 bedroom apartment</div>
-
-				<div className="mini-property-price">RM 200,000</div>
-				<div className="mini-property-bed">
-					<img src={bedroomImg} alt="bedrooms" />3
-				</div>
-				<div className="mini-property-bath">
-					<img src={bathroomImg} alt="bathrooms" />2
-				</div>
-
-				<div className="mini-property-location">
-					21 whitaker pl, grafton, auckland 1010, new zealand
-				</div> */}
 			</div>
 		);
 	}

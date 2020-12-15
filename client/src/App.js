@@ -1,19 +1,29 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import jwtdecode from "jwt-decode";
+import axios from "axios";
 import "./App.css";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import RegisterProperty from "./components/RegisterProperty";
 import Login from "./components/Login";
 import RegisterUser from "./components/RegisterUser";
+import SingleProperty from "./components/SingleProperty";
 
 class App extends Component {
 	state = {
-		// jwtToken: null,
+		properties: [],
 	};
 
-	componentDidMount() {
+	async componentDidMount() {
+		const url = `${process.env.REACT_APP_API_ENDPOINT}/property`;
+		try {
+			const { data } = await axios.get(url);
+			this.setState({ properties: data });
+		} catch (ex) {
+			console.log(`${ex} Error when getting properties`);
+		}
+
 		try {
 			const token = localStorage.getItem("token");
 			const user = jwtdecode(token);
@@ -27,8 +37,12 @@ class App extends Component {
 		this.setState({ jwtToken });
 	};
 
+	// handleGetSelectedProperty = () => {
+	// 	this.
+	// }
+
 	render() {
-		const { user } = this.state;
+		const { user, properties } = this.state;
 
 		return (
 			<div>
@@ -37,6 +51,15 @@ class App extends Component {
 					<Route
 						path="/register-property"
 						component={RegisterProperty}
+					/>
+					<Route
+						path="/single-property/:id"
+						render={(props) => (
+							<SingleProperty
+								{...props}
+								properties={properties}
+							/>
+						)}
 					/>
 					<Route
 						path="/register-user"
@@ -53,7 +76,13 @@ class App extends Component {
 							<Login {...props} onLogin={this.handleOnLogin} />
 						)}
 					/>
-					<Route path="/" component={Home} />
+					<Route
+						exact
+						path="/"
+						render={(props) => (
+							<Home {...props} properties={properties} />
+						)}
+					/>
 				</Switch>
 			</div>
 		);

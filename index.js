@@ -18,6 +18,7 @@ app.use("/api/login", login);
 app.use("/api/register-user", registerUser);
 
 app.use(express.static("client/build"));
+app.use("/api/images", express.static("uploads"));
 
 app.get("*", (req, res) => {
 	res.sendFile(path.join(__dirname, "client", "build", "index.html"));
