@@ -6,6 +6,28 @@ import UserAccountMenu from "./UserAccountMenu";
 class Navbar extends Component {
 	state = {
 		userAcc: false,
+		userAccRef: null,
+	};
+
+	componentDidMount() {
+		document.addEventListener("click", this.handleClickOutside, true);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener("click", this.handleClickOutside, true);
+	}
+
+	handleClickOutside = (e) => {
+		if (
+			this.state.userAccRef &&
+			!this.state.userAccRef.current.contains(e.target)
+		) {
+			this.setState({ userAcc: false });
+		}
+	};
+
+	handleGetRef = (userAccRef) => {
+		this.setState({ userAccRef });
 	};
 
 	handleLogout = () => {
@@ -48,8 +70,10 @@ class Navbar extends Component {
 								Account
 							</div>
 							<UserAccountMenu
+								getRef={this.handleGetRef}
 								userAccMenu={this.state.userAcc}
 								onLogout={this.handleLogout}
+								user={user}
 							/>
 						</div>
 					)}

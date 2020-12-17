@@ -103,6 +103,7 @@
 	grid-column-end: 2;
 	grid-row-start: 4;
 	grid-row-end: 5;
+	text-align: center;
 }
 
 .reg-user-grid-name {
@@ -137,7 +138,7 @@
 	box-shadow: 0 0 5px 0 gray;
 	padding: 20px;
 	position: absolute;
-	top: 40px;
+	top: 50px;
 	right: 20px;
 	background-color: white;
 	overflow-y: scroll;
@@ -209,7 +210,7 @@
 }
 
 .user-acc-btn:hover {
-	border-color: rgb(194, 250, 192);
+	border-color: rgb(129, 201, 129);
 }
 
 .user-acc-menu-container::-webkit-scrollbar {

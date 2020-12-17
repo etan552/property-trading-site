@@ -4,10 +4,16 @@ import dummyImg from "../assets/bathtub.svg";
 import { Link } from "react-router-dom";
 
 class UserAccountMenu extends Component {
-	state = {};
-	render() {
-		const { userAccMenu, onLogout } = this.props;
+	state = { menuDisplay: true };
 
+	menu = React.createRef();
+
+	componentDidMount() {
+		this.props.getRef(this.menu);
+	}
+
+	render() {
+		const { userAccMenu, onLogout, user } = this.props;
 		return (
 			<div
 				className={
@@ -15,13 +21,16 @@ class UserAccountMenu extends Component {
 						? "user-acc-menu-container"
 						: "user-acc-menu-container hidden"
 				}
+				ref={this.menu}
 			>
 				<div className="user-acc-img user-acc-details">
 					<img src={dummyImg} alt="user image" />
 				</div>
-				<div className="user-acc-name user-acc-details">abc123</div>
+				<div className="user-acc-name user-acc-details">
+					{user.name}
+				</div>
 				<div className="user-acc-email user-acc-details">
-					abc@gmail.com
+					{user.email}
 				</div>
 				<div className="user-acc-details">
 					<button className="user-acc-btn manage-acc">
@@ -36,19 +45,19 @@ class UserAccountMenu extends Component {
 					Max number of properties is 10.
 				</div>
 				<div className="user-acc-details">
-					<button className="user-acc-btn manage-prop">
-						New Property
-					</button>
+					<Link to="/register-property">
+						<button className="user-acc-btn manage-prop">
+							New Property
+						</button>
+					</Link>
 				</div>
 				<div
 					className="user-acc-details"
 					style={{ margin: "5px 0 5px 0" }}
 				>
-					<Link to="/register-property">
-						<button className="user-acc-btn manage-prop">
-							Manage Properties
-						</button>
-					</Link>
+					<button className="user-acc-btn manage-prop">
+						Manage Properties
+					</button>
 				</div>
 				<div className="horizontal-line" />
 				<div className="user-acc-details">

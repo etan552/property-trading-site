@@ -37,10 +37,6 @@ class App extends Component {
 		this.setState({ jwtToken });
 	};
 
-	// handleGetSelectedProperty = () => {
-	// 	this.
-	// }
-
 	render() {
 		const { user, properties } = this.state;
 

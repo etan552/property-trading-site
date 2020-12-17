@@ -65,7 +65,7 @@ class Login extends Component {
 						className="login-grid-new-user register-new-user"
 						to="/register-user"
 					>
-						Register a new user.
+						Register a new user
 					</Link>
 				</div>
 			</Form>
