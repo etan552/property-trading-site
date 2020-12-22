@@ -1,0 +1,31 @@
+.manage-prop-container {
+	width: 840px;
+	margin: 50px auto;
+	box-shadow: 0 0 5px 0 gray;
+	min-height: 400px;
+}
+
+.manage-prop-items-container {
+	display: grid;
+	grid-template-columns: 353px 80px 327px;
+	grid-gap: 20px;
+	width: 800px;
+	margin: 20px;
+}
+
+.manage-prop-item-btn {
+	width: 70px;
+	border-radius: 0.25rem;
+	padding: 5px;
+	margin: 10px 0 0 5px;
+}
+
+.edit-btn {
+	border: 1.5px solid rgb(97, 170, 88);
+	background-color: rgb(223, 255, 223);
+}
+
+.delete-btn {
+	border: 1.5px solid rgb(230, 115, 115);
+	background-color: rgb(255, 230, 230);
+}

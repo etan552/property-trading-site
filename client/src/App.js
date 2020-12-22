@@ -9,6 +9,7 @@ import RegisterProperty from "./components/RegisterProperty";
 import Login from "./components/Login";
 import RegisterUser from "./components/RegisterUser";
 import SingleProperty from "./components/SingleProperty";
+import PropertyEditPage from "./components/PropertyEditPage";
 
 class App extends Component {
 	state = {
@@ -47,6 +48,10 @@ class App extends Component {
 					<Route
 						path="/register-property"
 						component={RegisterProperty}
+					/>
+					<Route
+						path="/manage-property"
+						component={PropertyEditPage}
 					/>
 					<Route
 						path="/single-property/:id"

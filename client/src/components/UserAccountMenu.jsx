@@ -55,9 +55,11 @@ class UserAccountMenu extends Component {
 					className="user-acc-details"
 					style={{ margin: "5px 0 5px 0" }}
 				>
-					<button className="user-acc-btn manage-prop">
-						Manage Properties
-					</button>
+					<Link to="/manage-property">
+						<button className="user-acc-btn manage-prop">
+							Manage Properties
+						</button>
+					</Link>
 				</div>
 				<div className="horizontal-line" />
 				<div className="user-acc-details">
