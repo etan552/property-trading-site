@@ -5,7 +5,6 @@ import PropertyPage from "./PropertyPage";
 import "../view-style/Home.css";
 
 class Home extends Component {
-	state = {};
 	render() {
 		const { properties } = this.props;
 		return (

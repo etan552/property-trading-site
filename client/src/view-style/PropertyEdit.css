@@ -6,11 +6,16 @@
 }
 
 .manage-prop-items-container {
-	display: grid;
-	grid-template-columns: 353px 80px 327px;
-	grid-gap: 20px;
-	width: 800px;
+	display: flex;
+	flex-wrap: wrap;
+	/* grid-template-columns: 353px 80px 327px; */
+	/* grid-gap: 20px; */
+	width: 400px;
 	margin: 20px;
+}
+
+.manage-prop-item {
+	margin-bottom: 30px;
 }
 
 .manage-prop-item-btn {

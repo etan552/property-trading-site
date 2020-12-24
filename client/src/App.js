@@ -20,6 +20,7 @@ class App extends Component {
 		const url = `${process.env.REACT_APP_API_ENDPOINT}/property`;
 		try {
 			const { data } = await axios.get(url);
+			// console.log(data);
 			this.setState({ properties: data });
 		} catch (ex) {
 			console.log(`${ex} Error when getting properties`);
@@ -34,7 +35,7 @@ class App extends Component {
 
 	handleOnLogin = (token) => {
 		const jwtToken = token;
-		console.log("testing onlogin");
+		// console.log("testing onlogin");
 		this.setState({ jwtToken });
 	};
 
@@ -51,7 +52,9 @@ class App extends Component {
 					/>
 					<Route
 						path="/manage-property"
-						component={PropertyEditPage}
+						render={(props) => (
+							<PropertyEditPage {...props} user={user} />
+						)}
 					/>
 					<Route
 						path="/single-property/:id"

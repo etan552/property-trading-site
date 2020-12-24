@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import "../view-style/SingleProperty.css";
-import dummyImg from "../assets/bathtub.svg";
 
 class SingleProperty extends Component {
 	state = {};

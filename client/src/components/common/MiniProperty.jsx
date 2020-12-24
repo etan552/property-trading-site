@@ -5,13 +5,18 @@ import bedroomImg from "../../assets/bed.svg";
 import bathroomImg from "../../assets/bathtub.svg";
 
 class MiniProperty extends Component {
-	state = {};
-
 	handleRedirect = (id) => {
 		window.location = `/single-property/${id}`;
 	};
 	render() {
-		const { _id, name, price, location, bedroom, bathroom } = this.props;
+		const {
+			_id,
+			name,
+			price,
+			location,
+			bedroom,
+			bathroom,
+		} = this.props.property;
 		return (
 			<div
 				className="mini-container"

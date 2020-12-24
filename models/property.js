@@ -25,6 +25,7 @@ validateProperty = (property) => {
 		description: joi.string().required(),
 		email: joi.string().required(),
 		phone: joi.string().required(),
+		// jwt: joi.string().required(),
 		// imagePath: joi.string(),
 	});
 	return schema.validate(property);

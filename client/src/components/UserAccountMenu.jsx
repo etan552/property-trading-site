@@ -24,7 +24,7 @@ class UserAccountMenu extends Component {
 				ref={this.menu}
 			>
 				<div className="user-acc-img user-acc-details">
-					<img src={dummyImg} alt="user image" />
+					<img src={dummyImg} alt="userImg" />
 				</div>
 				<div className="user-acc-name user-acc-details">
 					{user.name}

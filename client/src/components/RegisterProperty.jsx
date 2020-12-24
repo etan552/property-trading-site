@@ -23,6 +23,11 @@ class RegisterProperty extends Component {
 		uploadFile: {},
 	};
 
+	componentDidMount() {
+		const jwtToken = localStorage.getItem("token");
+		this.setState({ jwtToken });
+	}
+
 	handleChange = ({ currentTarget: input }) => {
 		const propertyDetails = { ...this.state.propertyDetails };
 		propertyDetails[input.name] = input.value;
@@ -32,7 +37,6 @@ class RegisterProperty extends Component {
 	handleDropFile = (file) => {
 		const uploadFile = file;
 		this.setState({ uploadFile });
-		// this.handleSubmit();
 	};
 
 	handleSubmit = async (e) => {
@@ -51,9 +55,12 @@ class RegisterProperty extends Component {
 
 		try {
 			const { data } = await axios.post(url, fd, {
-				headers: { "Content-Type": "multipart/form-data" },
+				headers: {
+					"Content-Type": "multipart/form-data",
+					"x-auth-token": `${this.state.jwtToken}`,
+				},
 			});
-			console.log(data);
+			window.location.reload();
 		} catch (ex) {
 			console.log(ex.response.data);
 		}
