@@ -54,7 +54,7 @@ class RegisterProperty extends Component {
 		const url = `${process.env.REACT_APP_API_ENDPOINT}/property`;
 
 		try {
-			const { data } = await axios.post(url, fd, {
+			await axios.post(url, fd, {
 				headers: {
 					"Content-Type": "multipart/form-data",
 					"x-auth-token": `${this.state.jwtToken}`,

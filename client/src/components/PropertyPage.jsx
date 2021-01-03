@@ -10,16 +10,7 @@ class PropertyPage extends Component {
 			<div className="property-container">
 				<div className="inner-container">
 					{properties.map((property, index) => (
-						<MiniProperty
-							// _id={property._id}
-							// key={property._id}
-							// name={property.name}
-							// price={property.price}
-							// location={property.location}
-							// bedroom={property.bedroom}
-							// bathroom={property.bathroom}
-							property={property}
-						/>
+						<MiniProperty property={property} key={index} />
 					))}
 				</div>
 			</div>

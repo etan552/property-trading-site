@@ -1,5 +1,6 @@
 .manage-prop-container {
-	width: 840px;
+	/* display: flex; */
+	width: 780px;
 	margin: 50px auto;
 	box-shadow: 0 0 5px 0 gray;
 	min-height: 400px;
@@ -8,29 +9,107 @@
 .manage-prop-items-container {
 	display: flex;
 	flex-wrap: wrap;
-	/* grid-template-columns: 353px 80px 327px; */
-	/* grid-gap: 20px; */
-	width: 400px;
+	justify-content: flex-start;
+	width: 760px;
 	margin: 20px;
 }
 
+.manage-prop-edit-container > div {
+	width: 360px;
+	background-color: white;
+}
+
+.manage-prop-edit-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(221, 221, 221, 0.63);
+	/* padding: 10px 0; */
+}
+
+.hidden {
+	display: none;
+}
+
+.manage-prop-edit-form-header {
+	padding: 10px 20px;
+	font-size: 24px;
+	color: white;
+	font-weight: 600;
+	background-color: rgb(38, 128, 38);
+}
+
 .manage-prop-item {
-	margin-bottom: 30px;
+	margin: 0px 10px 20px 10px;
 }
 
 .manage-prop-item-btn {
-	width: 70px;
+	min-width: 70px;
 	border-radius: 0.25rem;
 	padding: 5px;
-	margin: 10px 0 0 5px;
+	margin: 7px 0 0 5px;
 }
 
 .edit-btn {
-	border: 1.5px solid rgb(97, 170, 88);
-	background-color: rgb(223, 255, 223);
+	border: 1.5px solid rgb(70, 172, 59);
+	background-color: rgb(70, 172, 59);
+	color: white;
+	/* background-color: rgb(223, 255, 223); */
+}
+
+.edit-btn:hover {
+	border: 1.5px solid rgb(50, 134, 11);
+	background-color: rgb(50, 134, 11);
+	cursor: pointer;
 }
 
 .delete-btn {
 	border: 1.5px solid rgb(230, 115, 115);
-	background-color: rgb(255, 230, 230);
+	background-color: rgb(230, 115, 115);
+	color: white;
+}
+
+.delete-btn:hover {
+	border: 1.5px solid rgb(199, 74, 74);
+	background-color: rgb(199, 74, 74);
+	cursor: pointer;
+}
+
+.test {
+	width: 100%;
+	margin: 0;
+}
+
+.manage-prop-edit-group {
+	padding: 7px 20px;
+}
+
+.manage-prop-edit-header {
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.manage-prop-edit-body {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+}
+
+.manage-prop-edit-img {
+	width: 20px;
+}
+
+.manage-prop-edit-img:hover {
+	cursor: pointer;
+}
+
+.manage-prop-edit-btn-group {
+	float: right;
+	margin: 0px 20px 15px 20px;
 }

@@ -17,6 +17,7 @@ class MiniProperty extends Component {
 			bedroom,
 			bathroom,
 		} = this.props.property;
+
 		return (
 			<div
 				className="mini-container"
