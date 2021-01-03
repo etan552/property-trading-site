@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropertyEditInput from "./common/PropertyEditInput";
+import { Link } from "react-router-dom";
 
 class PropertyEditDetails extends Component {
 	state = {
@@ -30,6 +31,20 @@ class PropertyEditDetails extends Component {
 		} = this.props;
 
 		const property = this.state.tempProperties[selectedProperty];
+
+		if (!property) {
+			return (
+				<div className="manage-prop-no-prop">
+					Please register a property
+					<Link
+						to="/register-property"
+						style={{ paddingLeft: "8px" }}
+					>
+						here
+					</Link>
+				</div>
+			);
+		}
 
 		let className = "";
 		if (displayProps) {

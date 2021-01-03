@@ -113,3 +113,8 @@
 	float: right;
 	margin: 0px 20px 15px 20px;
 }
+.manage-prop-no-prop {
+	font-size: 30px;
+	display: flex;
+	justify-content: center;
+}
