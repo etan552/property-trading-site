@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AlertBox from "./AlertBox";
+import PropertyEditAlertBox from "../PropertyEditAlertBox";
 import editImg from "../../assets/edit.svg";
 
 class PropertyEditInput extends Component {
@@ -48,7 +48,7 @@ class PropertyEditInput extends Component {
 						alt="edit button"
 					/>
 				</div>
-				<AlertBox
+				<PropertyEditAlertBox
 					property={property}
 					onEdit={onEdit}
 					showAlertBox={showAlertBox}

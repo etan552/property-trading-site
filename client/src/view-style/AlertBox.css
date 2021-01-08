@@ -8,15 +8,21 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(221, 221, 221, 0.63);
+	animation-name: show-alert-box;
+	animation-duration: 0.4s;
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0s, opacity 0.1s linear;
 }
 
 .hidden {
-	display: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.1s, opacity 0.1s linear;
 }
 
 .alert-box {
 	width: 360px;
-	/* height: 160px; */
 	background-color: white;
 	padding: 30px 20px;
 }

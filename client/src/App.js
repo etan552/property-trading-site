@@ -44,7 +44,7 @@ class App extends Component {
 
 		return (
 			<div>
-				<Navbar user={user} />
+				<Navbar user={user} properties={properties} />
 				<Switch>
 					<Route
 						path="/register-property"

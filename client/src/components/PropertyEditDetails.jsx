@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropertyEditInput from "./common/PropertyEditInput";
 import { Link } from "react-router-dom";
+import "../view-style/PropertyEdit.css";
 
 class PropertyEditDetails extends Component {
 	state = {
@@ -46,11 +47,11 @@ class PropertyEditDetails extends Component {
 			);
 		}
 
-		let className = "";
+		let className;
 		if (displayProps) {
-			className = "manage-prop-edit-container";
+			className = "manage-prop-edit-container-show";
 		} else if (!displayProps) {
-			className = "manage-prop-edit-container hidden";
+			className = "manage-prop-edit-container-show hidden-1";
 		}
 
 		return (

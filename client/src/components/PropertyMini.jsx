@@ -1,8 +1,17 @@
 import React, { Component } from "react";
 import MiniProperty from "./common/MiniProperty";
+import PropertyDeleteAlertBox from "./PropertyDeleteAlertBox";
 
 class PropertyMini extends Component {
-	state = {};
+	state = {
+		showAlertBox: false,
+	};
+
+	handleToggleAlertBox = () => {
+		const showAlertBox = !this.state.showAlertBox;
+		this.setState({ showAlertBox });
+	};
+
 	render() {
 		const {
 			property,
@@ -14,6 +23,12 @@ class PropertyMini extends Component {
 
 		return (
 			<React.Fragment>
+				<PropertyDeleteAlertBox
+					property={property}
+					onDelete={onDelete}
+					showAlertBox={this.state.showAlertBox}
+					onToggleAlertBox={this.handleToggleAlertBox}
+				/>
 				<MiniProperty property={property} />
 				<div style={{ float: "right" }}>
 					<button
@@ -27,7 +42,9 @@ class PropertyMini extends Component {
 					</button>
 					<button
 						className="manage-prop-item-btn delete-btn"
-						onClick={() => onDelete(property)}
+						onClick={() => {
+							this.handleToggleAlertBox();
+						}}
 					>
 						Delete
 					</button>

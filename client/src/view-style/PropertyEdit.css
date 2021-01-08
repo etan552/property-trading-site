@@ -14,12 +14,12 @@
 	margin: 20px;
 }
 
-.manage-prop-edit-container > div {
+.manage-prop-edit-container-show > div {
 	width: 360px;
 	background-color: white;
 }
 
-.manage-prop-edit-container {
+.manage-prop-edit-container-show {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -29,11 +29,15 @@
 	width: 100%;
 	height: 100%;
 	background-color: rgba(221, 221, 221, 0.63);
-	/* padding: 10px 0; */
+	opacity: 1;
+	visibility: visible;
+	transition: visibility 0s, opacity 0.1s linear;
 }
 
-.hidden {
-	display: none;
+.hidden-1 {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.1s, opacity 0.1s linear;
 }
 
 .manage-prop-edit-form-header {

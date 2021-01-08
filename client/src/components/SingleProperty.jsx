@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import "../view-style/SingleProperty.css";
+import placeholderImg from "../assets/placeholder-2.png";
 
 class SingleProperty extends Component {
-	state = {};
+	state = { selectedImg: 0 };
+
+	handleSelect = (index) => {
+		const selectedImg = index;
+		this.setState({ selectedImg });
+	};
 
 	render() {
 		const { properties } = this.props;
+		const { selectedImg } = this.state;
 		const property = _.filter(
 			properties,
 			(property) => property._id === this.props.match.params.id
@@ -24,22 +31,53 @@ class SingleProperty extends Component {
 							<React.Fragment>
 								<div className="single-prop-main-img">
 									<img
-										src={`${imgEndpoint}/${imgFilename[0]}`}
+										className="main-img"
+										src={`${imgEndpoint}/${imgFilename[selectedImg]}`}
 										alt="abc"
 									/>
 								</div>
 								<div className="single-prop-small-img">
 									{imgFilename.map((filename, index) => (
-										<img
+										<div
+											className={
+												selectedImg === index
+													? "small-img-container selectedImg"
+													: "small-img-container"
+											}
 											key={index}
-											className="small-img"
-											src={`${imgEndpoint}/${filename}`}
-											alt="dummyImg"
-										/>
+										>
+											<img
+												className="small-img"
+												src={`${imgEndpoint}/${filename}`}
+												alt="smallImg"
+												onClick={() =>
+													this.handleSelect(index)
+												}
+											/>
+										</div>
 									))}
 								</div>
 							</React.Fragment>
-						) : null}
+						) : (
+							<React.Fragment>
+								<div className="single-prop-main-img">
+									<img
+										className="main-img"
+										src={placeholderImg}
+										alt="placeholderImg"
+									/>
+								</div>
+								<div className="single-prop-small-img">
+									<div className="small-img-container selectedImg">
+										<img
+											className="small-img"
+											src={placeholderImg}
+											alt="mini-placeholderImg"
+										/>
+									</div>
+								</div>
+							</React.Fragment>
+						)}
 
 						<div className="single-prop-details-container">
 							<div className="single-prop-detail-group">

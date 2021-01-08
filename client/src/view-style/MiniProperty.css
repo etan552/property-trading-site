@@ -1,12 +1,10 @@
 .mini-container {
 	display: grid;
 	grid-template-columns: 90px 121.5px 40.5px 40.5px;
-	grid-column-gap: 10px;
-	padding: 10px 15px;
+	grid-column-gap: 13.3px;
+	padding: 10px 10px;
 	box-shadow: 0 0 2px 2px rgb(196, 196, 196);
-	/* border: 1.5px solid rgb(148, 148, 148); */
-	border-radius: 0.5rem;
-	width: 322.5px;
+	width: 333px;
 	cursor: pointer;
 }
 
@@ -15,6 +13,9 @@
 	grid-column-end: 2;
 	grid-row-start: 1;
 	grid-row-end: 4;
+	width: 90px;
+	height: 90px;
+	object-fit: contain;
 }
 
 .mini-property-name {
@@ -71,17 +72,3 @@
 	color: rgb(88, 88, 88);
 	font-weight: 400;
 }
-
-/* .mini-property-email {
-	grid-column-start: 4;
-	grid-column-end: 6;
-	grid-row-start: 3;
-	grid-row-end: 4;
-}
-
-.mini-property-phone {
-	grid-column-start: 6;
-	grid-column-end: 7;
-	grid-row-start: 3;
-	grid-row-end: 4;
-} */

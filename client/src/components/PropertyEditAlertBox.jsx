@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../../view-style/AlertBox.css";
+import "../view-style/AlertBox.css";
 
-class AlertBox extends Component {
+class PropertyEditAlertBox extends Component {
 	state = {};
 
 	inputField = React.createRef();
@@ -23,7 +23,7 @@ class AlertBox extends Component {
 			selectedProperty,
 		} = this.props;
 
-		let className = "alert-box-container hidden";
+		let className;
 
 		if (showAlertBox === true) {
 			className = "alert-box-container";
@@ -70,4 +70,4 @@ class AlertBox extends Component {
 	}
 }
 
-export default AlertBox;
+export default PropertyEditAlertBox;

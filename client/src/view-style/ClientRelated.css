@@ -210,7 +210,8 @@
 }
 
 .user-acc-btn:hover {
-	border-color: rgb(129, 201, 129);
+	border-color: rgb(20, 168, 20);
+	background-color: rgba(226, 255, 225, 0.589);
 }
 
 .user-acc-menu-container::-webkit-scrollbar {

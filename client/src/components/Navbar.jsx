@@ -9,6 +9,8 @@ class Navbar extends Component {
 		userAccRef: null,
 	};
 
+	accountBtn = React.createRef();
+
 	componentDidMount() {
 		document.addEventListener("click", this.handleClickOutside, true);
 	}
@@ -20,7 +22,8 @@ class Navbar extends Component {
 	handleClickOutside = (e) => {
 		if (
 			this.state.userAccRef &&
-			!this.state.userAccRef.current.contains(e.target)
+			!this.state.userAccRef.current.contains(e.target) &&
+			!this.accountBtn.current.contains(e.target)
 		) {
 			this.setState({ userAcc: false });
 		}
@@ -41,7 +44,7 @@ class Navbar extends Component {
 	};
 
 	render() {
-		const { user } = this.props;
+		const { user, properties } = this.props;
 
 		return (
 			<div className="navbar">
@@ -65,6 +68,7 @@ class Navbar extends Component {
 						<div className="nav-item">
 							<div
 								className="user-acc"
+								ref={this.accountBtn}
 								onClick={this.handleToggleUserAcc}
 							>
 								Account
@@ -74,6 +78,7 @@ class Navbar extends Component {
 								userAccMenu={this.state.userAcc}
 								onLogout={this.handleLogout}
 								user={user}
+								properties={properties}
 							/>
 						</div>
 					)}

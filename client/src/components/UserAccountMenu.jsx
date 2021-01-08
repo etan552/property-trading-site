@@ -13,7 +13,7 @@ class UserAccountMenu extends Component {
 	}
 
 	render() {
-		const { userAccMenu, onLogout, user } = this.props;
+		const { userAccMenu, onLogout, user, properties } = this.props;
 		return (
 			<div
 				className={
@@ -39,10 +39,10 @@ class UserAccountMenu extends Component {
 				</div>
 				<div className="horizontal-line" />
 				<div className="user-acc-prop-num user-acc-details">
-					Properties registered: 1
+					Properties registered: {properties.length}
 				</div>
 				<div className="user-acc-prop-details user-acc-details">
-					Max number of properties is 10.
+					Max number of properties is 8.
 				</div>
 				<div className="user-acc-details">
 					<Link to="/register-property">
